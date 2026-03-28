@@ -1,3 +1,8 @@
+// Based on mosh (https://github.com/mobile-shell/mosh)
+// Copyright 2012 Keith Winstein
+// License: GPL-3.0-or-later
+// Modified: flattened extensions for prost compatibility
+
 syntax = "proto2";
 
 option optimize_for = LITE_RUNTIME;
