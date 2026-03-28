@@ -1,0 +1,28 @@
+[package]
+name = "mosh-rs"
+version = "0.1.0"
+edition = "2024"
+description = "Minimal compatible mosh server implementation in Rust"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+aes = "0.8"
+ocb3 = "0.1"
+aead = "0.5"
+rand = "0.8"
+base64 = "0.22"
+prost = "0.13"
+flate2 = "1"
+nix = { version = "0.29", features = ["term", "signal", "poll", "fs", "process"] }
+log = "0.4"
+env_logger = "0.11"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[build-dependencies]
+prost-build = "0.13"
